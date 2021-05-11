@@ -1,0 +1,48 @@
+<mvc:View controllerName="com.cowinnotification.cowinNotification.controller.App" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns:t="sap.ui.table" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core"
+	xmlns="sap.m">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="Simple App by GB for Cowin available slot ">
+					<content>
+						<Button text="Play Demo Sound" press="playSound"/>
+						<Button press="getData" text="Start Notification cycle"/>
+						
+						<t:Table selectionMode="None" visibleRowCountMode="Interactive" visibleRowCount="5" minAutoRowCount='1' threshold="100" title="Bangalore Urban"
+						enableColumnFreeze="false" rows="{path:'localModelBU>/results',filters:[]}"
+						noData="No Bangalore Urban Slots Available">
+						<t:columns>
+							<t:Column width="11rem" visible="true"><Label text="center_id"/>
+								<t:template><Label text="{localModelBU>center_id}"/></t:template>
+							</t:Column>
+							<t:Column width="11rem" visible="true"><Label text="name"/>
+								<t:template><Label text="{localModelBU>name}"/></t:template>
+							</t:Column>
+							<t:Column width="11rem" visible="true"><Label text="pincode"/>
+								<t:template><Label text="{localModelBU>pincode}"/></t:template>
+							</t:Column>
+						</t:columns>
+					</t:Table>
+					
+					<t:Table selectionMode="None" visibleRowCountMode="Interactive" visibleRowCount="5" minAutoRowCount='1' threshold="100" title="BBMP Slots"
+						enableColumnFreeze="false" rows="{path:'localModelBBMP>/results',filters:[]}"
+						noData="No BBMP Slots Available">
+						<t:columns>
+							<t:Column width="11rem" visible="true"><Label text="center_id"/>
+								<t:template><Label text="{localModelBBMP>center_id}"/></t:template>
+							</t:Column>
+							<t:Column width="11rem" visible="true"><Label text="name"/>
+								<t:template><Label text="{localModelBBMP>name}"/></t:template>
+							</t:Column>
+							<t:Column width="11rem" visible="true"><Label text="pincode"/>
+								<t:template><Label text="{localModelBBMP>pincode}"/></t:template>
+							</t:Column>
+						</t:columns>
+					</t:Table>
+					</content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>
